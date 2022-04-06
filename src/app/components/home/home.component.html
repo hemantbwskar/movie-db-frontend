@@ -1,0 +1,36 @@
+<div  class="filters">
+    <mat-form-field>
+        <mat-label>Sort</mat-label>
+        <mat-select 
+        panelClass="sort-select" 
+        [(ngModel)]="sortBy">
+            <mat-option value="name">Name</mat-option>
+            <mat-option value="-released">Released</mat-option>
+            <mat-option value="-added">Added</mat-option>
+            <mat-option value="-created">Created</mat-option>
+            <mat-option value="-updated">Updated</mat-option>
+            <mat-option value="-rating">Rating</mat-option>
+            <mat-option value="metacritic">Metacritic</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="movies">
+    <li *ngFor="let movie of movies">
+    <div class="movie">
+        <div class="movie-thumb-container">
+            <img class="movie-thumbnail" 
+            src="{{movie.backgroundImage}}" 
+            alt="movie-thumb"
+            >
+        </div>
+        <div class="movie-description">
+            <p class="movie-name">{{movie.title}}<br><br>{{movie.metacritic}}<br><br>{{movie.ratings}}<br><br>{{movie.released}}</p>
+            <div class="movie-platforms">
+                <img class="movie-platform" 
+                src="https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png" 
+                alt="plateform-logo">
+            </div>
+        </div>
+    </div>
+</div>
