@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
@@ -8,8 +10,16 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'search/:game-search',
+    path: 'search/:title',
     component: HomeComponent,
+  },
+  {
+    path: 'movie/:movieId',
+    component: DetailsComponent,
+  },
+  {
+    path: 'add-movie',
+    component: AddMovieComponent,
   }
 ];
 

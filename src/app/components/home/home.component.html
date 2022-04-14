@@ -3,21 +3,22 @@
         <mat-label>Sort</mat-label>
         <mat-select 
         panelClass="sort-select" 
-        [(ngModel)]="sortBy">
-            <mat-option value="name">Name</mat-option>
-            <mat-option value="-released">Released</mat-option>
-            <mat-option value="-added">Added</mat-option>
-            <mat-option value="-created">Created</mat-option>
-            <mat-option value="-updated">Updated</mat-option>
-            <mat-option value="-rating">Rating</mat-option>
+        [(ngModel)]="sortBy"
+        (selectionChange)="searchMovies(sortBy)">
+            <mat-option value="title">Name</mat-option>
+            <mat-option value="released">Released</mat-option>
+            <mat-option value="ratings">Ratings</mat-option>
             <mat-option value="metacritic">Metacritic</mat-option>
+            <mat-option value="added"></mat-option>
+            <mat-option value="created"></mat-option>
+            <mat-option value="updated"></mat-option>
         </mat-select>
     </mat-form-field>
 </div>
 
 <div class="movies">
     <li *ngFor="let movie of movies">
-    <div class="movie">
+    <div class="movie" (click)="openMovieDetails(movie.movieId)">
         <div class="movie-thumb-container">
             <img class="movie-thumbnail" 
             src="{{movie.backgroundImage}}" 
@@ -27,9 +28,11 @@
         <div class="movie-description">
             <p class="movie-name">{{movie.title}}<br><br>{{movie.metacritic}}<br><br>{{movie.ratings}}<br><br>{{movie.released}}</p>
             <div class="movie-platforms">
-                <img class="movie-platform" 
-                src="https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png" 
-                alt="plateform-logo">
+                <img
+                *ngFor="let moviePlatform of movie.platforms" 
+                class="movie-platform" 
+                src="assets/images/platforms/{{moviePlatform}}.png" 
+                alt="{{moviePlatform}}">
             </div>
         </div>
     </div>

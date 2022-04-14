@@ -12,7 +12,7 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
     ): Observable<HttpEvent<any>> {
         req: req.clone({
             setHeaders: {
-                
+            'Access-Control-Allow-Origin': '*'
             },
             setParams:{
             }

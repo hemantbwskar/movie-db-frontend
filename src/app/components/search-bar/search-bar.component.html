@@ -1,12 +1,13 @@
 <div class="search-container">
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <span class="logo" routerLink="/">GamesDB</span>
+        <span class="logo" routerLink="/">MovieDB</span>
         <input 
         class="search-input" 
         name="search" 
         ngModel 
-        placeholder="Search Games" 
+        placeholder="Search Movies" 
         />
         <button class="search-button">Search</button>
     </form>
+    <button class="add-movie-btn" (click)="onAddMovie()">Add Movie</button>
 </div>

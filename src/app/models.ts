@@ -1,4 +1,5 @@
-export interface Movie{
+export class Movie{
+    movieId: number;
     backgroundImage: string;
     title: string;
     released: string;
@@ -6,11 +7,11 @@ export interface Movie{
     website: string;
     description: string;
     metacritic: number;
-    genres: Array<Genre>;
-    platforms: Array<Platform>;
-    ratings: Array<Rating>; 
-    screenshots: Array<Screenshot>;
-    trailers: Array<Trailer>;
+    genres: string[];
+    platforms: string[];
+    ratings: string[]; 
+    screenshots: string[];
+    trailers: string[];
     poster: string;
 }
 

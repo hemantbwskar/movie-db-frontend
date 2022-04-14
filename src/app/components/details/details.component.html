@@ -1,0 +1,50 @@
+<div class="details">
+    <div class="movie-banner">
+        <img class="movie-banner-image" src="{{movie.backgroundImage}}" alt="movie-banner">
+    </div>
+    <div class="movie-content">
+        <div class="details-wrapper">
+            <div class="movie-header">
+                <h1 class="movie-header-title">{{movie.title}}</h1>
+                
+                
+                <div class="movie-release-date">
+                    <p class="movie-release-date-text">Released:</p>
+                    <p class="movie-release-date-number">{{movie.released}}</p>
+                </div>
+                <div class="movie-description">
+                    <p class="movie-description-text">{{movie.description}}</p>
+                </div>
+                <div class="movie-rating">
+                    <p class="movie-rating-text"></p>
+                    <p class="movie-rating-number"></p>
+                </div>
+                <div class="movie-trailer">
+                    <iframe width="560" height="315" src="{{movie.trailers}}" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="movie-gauge">
+                    <mwl-gauge
+                    class="two"
+                    [max]="10"
+                    [dialStartAngle]="180"
+                    [dialEndAngle]="0"
+                    [value]="movieRating"
+                    [animated]="true"
+                    [color]="getColor"
+                    [animationDuration]="2"
+                    >
+                    </mwl-gauge>
+                    <a class="movie-gauge-label"
+                    target="_blank"
+                    href="#">
+                    Metacritic</a>
+                </div>
+                <div class="movie-platforms">
+                    <img 
+                    *ngFor="let platform of movie.platforms"
+                    class="movie-platform"
+                        src="assets/images/platforms/{{platform}}.png" alt="moviePlatform">
+                </div>
+            </div>

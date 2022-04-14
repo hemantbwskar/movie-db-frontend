@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GaugeModule } from 'angular-gauge';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptors';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 @NgModule({
@@ -23,9 +24,11 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    DetailsComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

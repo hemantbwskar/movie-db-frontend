@@ -13,7 +13,7 @@
       "Adventure",
       "Fantasy"
     ],
-    "platforms": null,
+    "platforms": ["Netflix","Prime"],
     "ratings": [
       "8.5"
     ],
@@ -35,7 +35,7 @@
       "Adventure",
       "Fantasy"
     ],
-    "platforms": null,
+    "platforms": ["Netflix","Prime"],
     "ratings": [
       "7.4"
     ],
@@ -57,7 +57,7 @@
       "Adventure",
       "Fantasy"
     ],
-    "platforms": null,
+    "platforms": ["Netflix","Prime"],
     "ratings": [
       "7.4"
     ],
@@ -79,7 +79,7 @@
       "Adventure",
       "Fantasy"
     ],
-    "platforms": null,
+    "platforms": ["Netflix","Prime"],
     "ratings": [
       "7.4"
     ],
@@ -101,7 +101,7 @@
       "Adventure",
       "Fantasy"
     ],
-    "platforms": null,
+    "platforms": ["Netflix","Prime"],
     "ratings": [
       "6.3"
     ],
@@ -123,9 +123,31 @@
       "Adventure",
       "Fantasy"
     ],
-    "platforms": null,
+    "platforms": ["Netflix","Prime"],
     "ratings": [
       "7.4"
+    ],
+    "screenshots": null,
+    "trailers": null,
+    "poster": null
+  },
+  {
+    "movieId": 7,
+    "backgroundImage": "https://images.indianexpress.com/2022/01/andrew1200.jpg",
+    "title": "The Amazing Spider-Man 2",
+    "released": "2014",
+    "metacritic_url": null,
+    "website": "https://www.sonypictures.com/movies/theamazingspiderman2",
+    "description": "When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones.",
+    "metacritic": "dfiawefkj",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "platforms": ["Netflix","Prime"],
+    "ratings": [
+      "6.6"
     ],
     "screenshots": null,
     "trailers": null,

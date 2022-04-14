@@ -1,1 +1,76 @@
-<p>add-movie works!</p>
+<div class="add-movie">
+    <form class="add-movie-form" #form="ngForm" >
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" ngModel placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" class="form-control" id="website" name="website" ngModel placeholder="Website">
+        </div>
+        <div class="form-group">
+            <label for="metacritic">Metacritic</label>
+            <input type="text" class="form-control" id="metacritic" name="metacritic" ngModel placeholder="Metacritic">
+        </div>
+        <div class="form-group">
+            <label for="backgroundImage">Background Link</label>
+            <input type="text" class="form-control" id="backgroundImage" name="backgroundImage" ngModel
+                placeholder="Image Link">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control-description" id="description" name="description" ngModel
+                placeholder="Description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="poster">Poster</label>
+            <input type="text" class="form-control" id="poster" name="posters" ngModel placeholder="Poster">
+        </div>
+        <div class="form-group">
+            <label for="released">Release Year</label>
+            <input type="text" class="form-control" id="released" name="released" ngModel placeholder="Release Year">
+        </div>
+        <div class="form-group">
+            <label for="trailer">Trailers</label>
+            <input type="text" class="form-control" id="trailer" name="trailer" ngModel
+                placeholder="Trailers">
+            <button class="btn-add-more" (click)="addTrailer()">Add More</button>
+            <label *ngFor="let trailer of trailerList; index as i" class="array-added">{{trailer}}
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="screenshots">Screenshots</label>
+            <input type="text" class="form-control" id="screenshot" name="screenshots" ngModel
+                placeholder="Screenshots">
+            <button class="btn-add-more" (click)="addScreenShot()">Add More</button>
+
+            <label *ngFor="let screenshot of screenshots;  index as i" class="array-added">{{screenshot}}
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="text" class="form-control" id="rating" name="ratings" ngModel
+                placeholder="Ratings">
+            <button class="btn-add-more" (click)="addRating()">Add More</button>
+            <label *ngFor="let rating of ratings; index as i" class="array-added">{{rating}}
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" class="form-control" id="genre" name="genres" ngModel
+                placeholder="Genres">
+            <button class="btn-add-more" (click)="addGenre()">Add More</button>
+            <label *ngFor="let genre of genres; index as i" class="array-added">{{genre}}
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="platforms">platforms</label>
+            <input type="text" class="form-control" id="platform" name="platforms" ngModel
+                placeholder="Platforms">
+            <button class="btn-add-more" (click)="addPlatform()">Add More</button>
+            <label *ngFor="let platform of platforms; index as i" class="array-added">{{platform}}
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit(form)">Submit</button>
+    </form>
+</div>
