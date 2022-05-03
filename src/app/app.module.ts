@@ -17,6 +17,7 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptors
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { DetailsComponent } from './components/details/details.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DetailsComponent } from './components/details/details.component';
     SearchBarComponent,
     HomeComponent,
     AddMovieComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent
   ],
   imports: [
     ReactiveFormsModule,

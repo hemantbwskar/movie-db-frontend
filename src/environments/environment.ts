@@ -5,8 +5,10 @@
 export const environment = {
   production: false,
   
-  // BASE_URL: 'http://localhost:5000/'
-  BASE_URL: 'https://movie-db-back-hrb.herokuapp.com/'
+  BASE_URL: 'http://localhost:5000/',
+  AUTH_URL: 'http://localhost:5000/authenticate/',
+  // BASE_URL: 'https://movie-db-back-hrb.herokuapp.com/',
+  // AUTH_URL: 'https://movie-db-back-hrb.herokuapp.com/authenticate/'
 };
 
 /*
