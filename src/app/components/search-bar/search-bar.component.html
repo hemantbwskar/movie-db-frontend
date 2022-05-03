@@ -1,13 +1,15 @@
 <div class="search-container">
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <span class="logo" routerLink="/">MovieDB</span>
-        <input 
-        class="search-input" 
-        name="search" 
-        ngModel 
-        placeholder="Search Movies" 
-        />
+        <input class="search-input" name="search" ngModel placeholder="Search Movies" />
         <button class="search-button">Search</button>
     </form>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a href="/home" class="nav-link" routerLink="/">Home </a>
+        <a href="/login" class="nav-link" *ngIf="!isLoggedIn" routerLink="login">Login</a>
+        <a href class="nav-link" *ngIf="isLoggedIn" (click)="logout()">LogOut</a>
+    </nav>
+
     <button class="add-movie-btn" (click)="onAddMovie()">Add Movie</button>
 </div>
