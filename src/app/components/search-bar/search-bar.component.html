@@ -5,11 +5,16 @@
         <button class="search-button">Search</button>
     </form>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/home" class="nav-link" routerLink="/">Home </a>
-        <a href="/login" class="nav-link" *ngIf="!isLoggedIn" routerLink="login">Login</a>
-        <a href class="nav-link" *ngIf="isLoggedIn" (click)="logout()">LogOut</a>
-    </nav>
+    <div class="options">
+        <mat-form-field>
+            <mat-label>Menu</mat-label>
+            <mat-select panelClass="sort-select">
+                <mat-option class="option-btn" (click)="onAddMovie()">Add Movie</mat-option>
+                <mat-option href="/home" class="option-btn" routerLink="/">Home</mat-option>
+                <mat-option href="/login" class="option-btn" *ngIf="!isLoggedIn" routerLink="login">Login</mat-option>
+                <mat-option href class="option-btn" *ngIf="isLoggedIn" (click)="logout()">LogOut</mat-option>
 
-    <button class="add-movie-btn" (click)="onAddMovie()">Add Movie</button>
+            </mat-select>
+        </mat-form-field>
+    </div>
 </div>
