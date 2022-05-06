@@ -1,5 +1,6 @@
 
   <div class="login-container">
+    
     <img id="profile-img" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/profile-1506810-1278719.png" class="profile-img-card" />
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
@@ -34,5 +35,9 @@
     </form>
     <div class="alert alert-success" *ngIf="isLoggedIn">
       Logged in as {{ user }}.
+      
+    </div>
+    <div id="success" *ngIf="isVisible">
+      <h2 class="Successful" >Success!</h2>
     </div>
   </div>

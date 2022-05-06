@@ -1,0 +1,30 @@
+<div class="content-wrap">
+  <igx-nav-drawer id="navigation" #drawer [isOpen]="false" [pinThreshold]="5000">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true">Options</span>
+        <span>
+          <button href class="currentUser" *ngIf="isLoggedIn" >Logged in as {{currentUser}}</button>
+          <button href="/home" class="navigation" routerLink="/" (click)="drawer.toggle()">Home</button>
+          <button class="navigation" href="/login" *ngIf="!isLoggedIn"
+            routerLink="login" (click)="drawer.toggle()">Login</button>
+            
+          <button href class="navigation" *ngIf="isLoggedIn" (click)="logout()">LogOut</button>
+          
+        </span>
+        <!-- <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
+            <igx-icon family="material">{{ item.name }}</igx-icon>
+            <a href="/{{ item.text }}">{{ item.text }}</a>
+          </span> -->
+      </nav>
+    </ng-template>
+  </igx-nav-drawer>
+
+  <main>
+    <button (click)="drawer.toggle()">
+      <igx-icon class="btn-dark" family="material">menu</igx-icon>
+    </button>
+
+    <!-- <h5>{{selected}} content.</h5> -->
+  </main>
+</div>

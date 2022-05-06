@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormArray,FormArrayName, FormControl, FormGroup } from '@angular/forms';
 import { Movie } from 'src/app/models';
+import { AuthService } from 'src/app/services/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class AddMovieComponent implements OnInit {
   screenshots: string[] = [];
   movie:Movie=new Movie();
   constructor(
-    private httpService: HttpService,
+    private httpService: AuthService,
   ) { }
 
   ngOnInit(): void {

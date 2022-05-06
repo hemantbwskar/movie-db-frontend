@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscriber, Subscription } from 'rxjs';
 import {Movie} from 'src/app/models';
+import { AuthService } from 'src/app/services/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -18,7 +19,7 @@ movieSub: Subscription;
 
   constructor(
     private ActivatedRoute: ActivatedRoute,
-    private httpService: HttpService,
+    private httpService: AuthService,
   ) { }
 
   ngOnInit(): void {

@@ -1,0 +1,58 @@
+.content-wrap {
+    display: flex;
+    height: 100%;
+}
+
+main {
+    height: 100%;
+    overflow: auto;
+    padding: 16px;
+    h5 {
+        padding: 8px 0;
+    }
+}
+
+:host {
+    display: block;
+    height: 100%;
+}
+
+.btn-dark{
+    background-color: #343a40;
+    color: #fff;
+}
+
+.navigation{
+    height: 50px;
+    width: 250px;
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+    &:hover{
+        border-radius: 10px;
+        box-shadow: 4px 3px 11px 6px rgb(200, 152, 44);
+        transform: translateY(-3px);
+    }
+}
+
+.currentUser{
+    height: 50px;
+    width: 250px;
+    background-color: #fff;
+    color: #ba61dd;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px;
+    border: none;
+    transition: .3s;
+    box-shadow: 4px 3px 8px 0px #ba61dd;
+    cursor: pointer;
+    &:hover{
+        
+        box-shadow: 4px 3px 11px 6px rgb(200, 152, 44);
+        transform: translateY(-3px);
+    }
+}

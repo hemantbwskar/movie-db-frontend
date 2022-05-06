@@ -20,6 +20,11 @@ results: Array<Movie>;
 
 }
 
+export interface CustomItem{
+    name: string;
+    text:string;
+}
+
 interface Genre{
     name: string;
 }

@@ -1,20 +1,13 @@
+
 <div class="search-container">
+    <div>
+        <app-menu-drawer></app-menu-drawer>
+    </div>
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <span class="logo" routerLink="/">MovieDB</span>
         <input class="search-input" name="search" ngModel placeholder="Search Movies" />
         <button class="search-button">Search</button>
     </form>
+    
 
-    <div class="options">
-        <mat-form-field>
-            <mat-label>Menu</mat-label>
-            <mat-select panelClass="sort-select">
-                <mat-option class="option-btn" (click)="onAddMovie()">Add Movie</mat-option>
-                <mat-option href="/home" class="option-btn" routerLink="/">Home</mat-option>
-                <mat-option href="/login" class="option-btn" *ngIf="!isLoggedIn" routerLink="login">Login</mat-option>
-                <mat-option href class="option-btn" *ngIf="isLoggedIn" (click)="logout()">LogOut</mat-option>
-
-            </mat-select>
-        </mat-form-field>
-    </div>
 </div>

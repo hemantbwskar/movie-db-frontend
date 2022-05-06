@@ -1,3 +1,6 @@
+
+
+
 <div  class="filters">
     <mat-form-field>
         <mat-label>Sort</mat-label>
@@ -23,7 +26,13 @@
             >
         </div>
         <div class="movie-description">
-            <p class="movie-name">{{movie.title}}<br><br>{{movie.metacritic}}<br><br>{{movie.ratings}}<br><br>{{movie.released}}</p>
+            <p class="movie-name">{{movie.title}}<br>{{movie.metacritic}}<br>{{movie.released}}</p>
+            
+                <p
+                *ngFor="let rating of movie.ratings" 
+                class=""> 
+                "{{rating}}"</p>
+            
             <div class="movie-platforms">
                 <img
                 *ngFor="let moviePlatform of movie.platforms" 

@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { delay } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from '../../services/token-storage.service';
+import { MenuDrawerComponent } from '../menu-drawer/menu-drawer.component';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,14 +18,21 @@ export class LoginComponent implements OnInit {
   };
   isLoggedIn = false;
   isLoginFailed = false;
+  isVisible:boolean;
   errorMessage = '';
   roles: string[] = [];
-  user:any=localStorage.getItem("CurrentUser");
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  user:any;
+  isSuccess:any="";
+  constructor(private authService: AuthService, 
+    private tokenStorage: TokenStorageService,
+    private router : Router,
+    private route:ActivatedRoute) { }
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
+      this.isVisible=false;
+      this.user=localStorage.getItem("CurrentUser");
     }
   }
   onSubmit(): void {
@@ -33,10 +45,22 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         localStorage.setItem("CurrentUser", username);
+        this.user=localStorage.getItem("CurrentUser");
+        this.isVisible=true;
+        setTimeout(() => {
+        //   this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
+        //     this.router.navigate(['MenuDrawerComponent']);
+        // }); 
+          this.router.navigate(['/'])
+          .then(() => {
+            window.location.reload()
+          })
+        // window.location.reload();
+        // this.reloadPage();
+          // this.router.navigate(['/']);
+        }, 2000);
         
-        this.reloadPage();
         
-          
         
       },
       err => {
@@ -45,10 +69,9 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  reloadPage(): void {
-    window.location.reload();
-    
-  }
-
+ 
+reloadPage() {
+window.location.reload();
+}
   
 }
