@@ -1,6 +1,7 @@
 
 .search {
     &-container {
+        padding-left: 80px;
         width: 100%;
         min-height: 50px;
         background-color: #323a45;
@@ -17,6 +18,9 @@
         width: 340px;
         max-width: 1200px;
         margin: auto 0;
+  flex-wrap: wrap;
+  
+  justify-items: right;
     }
 
     &-input {
@@ -31,7 +35,7 @@
     }
 
     &-button {
-        position: fixed;
+        position: relative;
         border: none;
         outline: none;
         background-color: #a524d8;
@@ -100,5 +104,12 @@
     width: 60px;
 }
 
+
+@media screen and (max-width: 420px) {
+    .search-form {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+  }
 
 

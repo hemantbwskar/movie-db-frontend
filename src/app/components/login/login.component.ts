@@ -53,10 +53,10 @@ export class LoginComponent implements OnInit {
         // //   this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
         // //     this.router.navigate(['MenuDrawerComponent']);
         // // }); 
-        //   this.router.navigate(['/'])
-        //   .then(() => {
-        //     window.location.reload()
-        //   })
+          this.router.navigate(['/'])
+          .then(() => {
+            window.location.reload()
+          })
         // // window.location.reload();
         // // this.reloadPage();
         //   // this.router.navigate(['/']);

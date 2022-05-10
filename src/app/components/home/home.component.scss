@@ -105,3 +105,10 @@ align-items: center;
     }
 
 }
+
+@media screen and (max-width: 420px) {
+    .filters {
+        padding-top: 20px;
+    }
+  }
+
