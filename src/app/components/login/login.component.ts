@@ -6,6 +6,7 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { MenuDrawerComponent } from '../menu-drawer/menu-drawer.component';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -43,22 +44,23 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        console.log(this.tokenStorage.getUser());
         this.roles = this.tokenStorage.getUser().roles;
         localStorage.setItem("CurrentUser", username);
         this.user=localStorage.getItem("CurrentUser");
         this.isVisible=true;
-        setTimeout(() => {
-        //   this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
-        //     this.router.navigate(['MenuDrawerComponent']);
-        // }); 
-          this.router.navigate(['/'])
-          .then(() => {
-            window.location.reload()
-          })
-        // window.location.reload();
-        // this.reloadPage();
-          // this.router.navigate(['/']);
-        }, 2000);
+        // setTimeout(() => {
+        // //   this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
+        // //     this.router.navigate(['MenuDrawerComponent']);
+        // // }); 
+        //   this.router.navigate(['/'])
+        //   .then(() => {
+        //     window.location.reload()
+        //   })
+        // // window.location.reload();
+        // // this.reloadPage();
+        //   // this.router.navigate(['/']);
+        // }, 2000);
         
         
         
@@ -69,9 +71,5 @@ export class LoginComponent implements OnInit {
       }
     );
   }
- 
-reloadPage() {
-window.location.reload();
-}
-  
+   
 }

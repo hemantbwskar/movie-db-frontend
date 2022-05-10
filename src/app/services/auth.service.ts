@@ -6,7 +6,7 @@ import { Movie } from '../models';
 
 const AUTH_API = `${env.AUTH_URL}`;
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
 };
 @Injectable({
   providedIn: 'root'
@@ -19,18 +19,20 @@ export class AuthService {
       password
     }, httpOptions);
   }
-  // register(username: string, email: string, password: string): Observable<any> {
-  //   return this.http.post(AUTH_API + 'signup', {
-  //     username,
-  //     email,
-  //     password
-  //   }, httpOptions);
-  // }
+  register(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + 'signup', {
+      username,
+      email,
+      password
+    }, httpOptions);
+  }
 
   getMovieDetails(movieId: number): Observable<Movie>{
-    const movieInfoRequest= this.http.get<Movie>(`${env.BASE_URL}movie/${movieId}`,httpOptions);
-    console.log(movieInfoRequest);
-    return movieInfoRequest;
+
+    console.log(this.http.get<Movie>(`${env.BASE_URL}movie/${movieId}`,httpOptions));
+    return this.http.get<Movie>(`${env.BASE_URL}movie/${movieId}`,httpOptions);
+    // console.log(movieInfoRequest);
+    // return movieInfoRequest;
   }
   
   addMovie(movie: String): Observable<any>{

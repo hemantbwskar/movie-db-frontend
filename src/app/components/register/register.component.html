@@ -1,6 +1,6 @@
 
-  <div class="login-container">
-    <h3>Login:</h3><br>
+  <div class="register-container">
+    <h3>Registration:</h3><br>
     <img id="profile-img" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/profile-1506810-1278719.png" class="profile-img-card" />
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
@@ -12,29 +12,37 @@
         </div>
       </div>
       <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required
+          #email="ngModel" />
+        <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">
+          Email is required!
+        </div>
+      </div>
+      <div class="form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="5"
           #password="ngModel" />
         <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
           <!-- <div *ngIf="password.errors.required">Password is required</div>
           <div *ngIf="password.errors.minlength"> -->
-          Password must be at least 6 characters
+          Password must be at least 5 characters
           <!-- </div> -->
         </div>
       </div>
       <div class="form-group">
         <button class="btn btn-primary btn-block">
-          Login
+          Sign Up
         </button>
       </div>
       <div class="form-group">
         <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-          Login failed: {{ errorMessage }}
+          Sign Up failed: {{ errorMessage }}
         </div>
       </div>
     </form>
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logged in as {{ user }}.
+      Already Logged in as {{ user }}.
       
     </div>
     <div id="success" *ngIf="isVisible">

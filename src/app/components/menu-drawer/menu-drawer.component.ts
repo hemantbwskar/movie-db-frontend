@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { CustomItem} from 'src/app/models';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-menu-drawer',
   templateUrl: './menu-drawer.component.html',
@@ -39,6 +40,7 @@ export class MenuDrawerComponent  {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  status:boolean=false;
   ngOnInit(): void {
     this.routeSub=this.ActivatedRoute.params.subscribe(()=>{
       // window.location.reload();
@@ -60,5 +62,12 @@ export class MenuDrawerComponent  {
 
   loggedIn() {
     this.isLoggedIn=true;
+  }
+
+  drawerFunc(){
+ this.status=!this.status;
+ this.drawer.toggle();
+
+    
   }
 }

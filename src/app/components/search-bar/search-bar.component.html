@@ -1,8 +1,7 @@
 
+
 <div class="search-container">
-    <div>
-        <app-menu-drawer></app-menu-drawer>
-    </div>
+    
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <span class="logo" routerLink="/">MovieDB</span>
         <input class="search-input" name="search" ngModel placeholder="Search Movies" />

@@ -26,6 +26,7 @@ import {
 	IgxRippleModule,
 	IgxTreeModule
  } from "igniteui-angular";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {
     AddMovieComponent,
     DetailsComponent,
     LoginComponent,
-    MenuDrawerComponent
+    MenuDrawerComponent,
+    RegisterComponent
   ],
   imports: [
     ReactiveFormsModule,

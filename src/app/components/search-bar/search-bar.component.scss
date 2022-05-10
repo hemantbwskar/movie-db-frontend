@@ -5,18 +5,18 @@
         min-height: 50px;
         background-color: #323a45;
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
         align-items: center;
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0;
         z-index: 4;
     }
 
     &-form {
-        width: 100%;
+        width: 340px;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: auto 0;
     }
 
     &-input {
@@ -99,4 +99,6 @@
 .mat-form-field{
     width: 60px;
 }
+
+
 

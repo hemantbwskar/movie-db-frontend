@@ -11,12 +11,14 @@ export class AuthInterceptor implements HttpInterceptor {
     let authReq = req;
     const token = this.token.getToken();
     if (token != null) {
-      authReq = req.clone({ headers:new HttpHeaders()
-        .set('content-type', 'application/json')
-        .set(TOKEN_HEADER_KEY, 'Bearer ' + token)
-        .set('Access-Control-Allow-Origin', '*')});
+      authReq = req.clone({
+         headers:
+        // new HttpHeaders()
+        // .set('content-type', 'application/json')
+        // .set(TOKEN_HEADER_KEY, 'Bearer ' + token)
+        // .set('Access-Control-Allow-Origin', '*')});
         
-        // req.headers.set({TOKEN_HEADER_KEY, 'Bearer ' + token})});
+        req.headers.set(TOKEN_HEADER_KEY, `Bearer ${token}`)});
     }
     console.log(authReq);
     return next.handle(authReq);
